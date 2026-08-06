@@ -1,21 +1,35 @@
-# 🏗️ System-Architektur — atc-dns
+# 🏛️ Architektur — atc-dns
+
+> **Repo:** [atc-dns](https://github.com/A-TownChain-Okosystems/atc-dns)
+> **Layer:** L5 | **Titel:** DNS
+> **Stand:** 2026-08-06 | **Version:** v1.0.0
 
 ---
 
-## 1. Funktionsweise von .atc Domains
+## Übersicht
 
-`atc-dns` bildet Namen wie `alice.atc` auf kryptografische Adressen, Gateway URIs und IPFS Hashs ab.
+Dezentraler DNS-Resolver für A-TownChain Netzwerk.
 
-```
-[ Domain Lookup: bob.atc ] ──> [ Local TTL Cache ] ──> (Hit) Return Address
-                                     │
-                                (Cache Miss)
-                                     ▼
-                      [ On-Chain Registrar State ]
-```
+## Komponenten
 
-## 2. Unterstützte Record Typen
+## Abhängigkeiten
 
-- **`A` / `AAAA`**: Physische Node IP-Adressen.
-- **`ATC-URI`**: Interne Dezentrale Ressourcen-Zeiger.
-- **`TXT`**: Arbiträre Metadaten & Agenten Identifikationen.
+Dieses Repo ist Teil des A-TownChain Ökosystems und nutzt:
+- [ATCLang Compiler](https://github.com/A-TownChain-Okosystems/atclang) für .atc Module
+- [ATC Standards](https://github.com/A-TownChain-Okosystems/atc-standards) für Spezifikationen
+- [Haupt-Wiki](https://github.com/A-TownChain-Okosystems/a-townchain-os-docs) für Governance
+
+## Statistik
+
+| Metrik | Wert |
+|--------|------|
+| Code-Dateien | 0 |
+| .atc | 0 |
+| .py | 0 |
+| .rs | 0 |
+| .ts | 0 |
+| Total Zeilen | 0 |
+
+---
+
+*Auto-generiert 2026-08-06 · Aurora (MasterBrain · Base44)*

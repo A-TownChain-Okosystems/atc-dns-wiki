@@ -1,37 +1,29 @@
-# 🌳 Architektur — atc-dns-wiki
+# ARCHITECTURE.md — atc-dns
 
-> **Stand:** 2026-08-06 | **Commit:** 936de66
-> **Teil von:** [A-TownChain Ökosystem](https://github.com/A-TownChain-Okosystems)
+> Copyright © Michael Wroblewski / A-TownChain-Okosystems. All Rights Reserved.
 
-## Statistik
-
-| Metrik | Wert |
-|--------|------|
-| Dateien | 12 |
-| Zeilen | 192 |
-| .atc | 0 |
-| .py | 0 |
-| .rs | 0 |
-| .ts/.tsx | 0 |
-| .md | 10 |
-
-## Verzeichnisstruktur
-
-```
-├── docs/ (4 files, 86 lines)
-│   ├── API.md (14 lines)
-│   ├── ARCHITECTURE.md (35 lines)
-│   ├── MODULES.md (14 lines)
-│   └── ROADMAP.md (23 lines)
-├── .gitignore
-├── ARCHITECTURE.md (14 lines)
-├── FILE_REGISTER.md (15 lines)
-├── LICENSE
-├── MODULES.md (10 lines)
-├── README.md (24 lines)
-├── ROADMAP.md (8 lines)
-└── STATUS.md (35 lines)
+## File Tree
+```tree
+atc-dns/
+├── Cargo.toml — Decentralized DNS resolution library manifest
+├── .gitignore — Git ignore configuration
+└── src/
+    ├── lib.rs — Crate entry point and DNS resolution facade
+    ├── resolver.rs — High-speed decentralized name resolution algorithm for .atc domains
+    ├── cache.rs — In-memory TTL-based DNS record cache manager
+    ├── records.rs — DNS record structures (A, AAAA, TXT, DID, ATC-URI) and serialization
+    └── propagation.rs — Peer-to-peer record propagation and consensus synchronization
 ```
 
----
-*Auto-generiert 2026-08-06 · Aurora (MasterBrain · Base44)*
+## Module Descriptions
+- src/lib.rs — Top-level API for performing domain lookups and record registration.
+- src/resolver.rs — Resolves `.atc` human-readable domain names into cryptographic public keys and network addresses.
+- src/cache.rs — High-performance concurrent cache with TTL expiration handling.
+- src/records.rs — Serializable definitions of record types used across A-TownChain network.
+- src/propagation.rs — P2P gossip propagation engine broadcasting DNS updates across network peers.
+
+## Build System
+- Cargo.toml — `#![no_std]` Rust library usable in standalone daemons or kernel services.
+
+## Dependencies
+- serde-no-std — Compact binary serialization for wire-protocol DNS messages.
